@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+import { site } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} · ${site.title}` : site.title;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="page page--article">
+      <header class="article-header">
+        <a href="/" class="article-logo" aria-label="Home">
+          <Logo />
+        </a>
+        <p class="article-tagline">{site.tagline}</p>
+      </header>
+
+      <main class="article-main">
+        <a href="/" class="back-link">← Home</a>
+        <article class="prose">
+          {title && <h1 class="article-title">{title}</h1>}
+          {description && <p class="article-lede">{description}</p>}
+          <slot />
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
