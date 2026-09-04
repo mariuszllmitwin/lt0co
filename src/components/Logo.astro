@@ -1,0 +1,15 @@
+---
+import { logo } from '../config/site';
+
+const defaultVariant = logo.variants[0];
+---
+
+<span class="logo" id="site-logo" aria-label="lt0">{defaultVariant}</span>
+
+<script is:inline define:vars={{ variants: logo.variants }}>
+  (function () {
+    const el = document.getElementById('site-logo');
+    if (!el) return;
+    el.textContent = variants[Math.floor(Math.random() * variants.length)];
+  })();
+</script>

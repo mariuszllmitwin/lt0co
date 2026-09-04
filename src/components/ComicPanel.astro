@@ -1,0 +1,47 @@
+---
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  blurb: string;
+  href: string;
+  cover: ImageMetadata;
+}
+
+const { title, blurb, href, cover } = Astro.props;
+
+/** Slightly wobbly rectangle path in a 100×100 viewBox */
+const wobble = 'M 3.2 4.1 C 28 1.8, 55 2.5, 96.5 3.4 L 97.2 96.1 C 70 98.5, 35 97.8, 2.8 96.2 Z';
+const wobbleCaption = 'M 2.5 5 C 30 2, 65 3, 97 4.5 L 96.5 94 C 68 97, 32 96, 3 93.5 Z';
+---
+
+<a class="comic" href={href}>
+  <div class="comic__stack">
+    <div class="comic__sheet comic__sheet--back-3" aria-hidden="true">
+      <svg class="comic__wobble" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d={wobble}></path>
+      </svg>
+    </div>
+    <div class="comic__sheet comic__sheet--back-2" aria-hidden="true">
+      <svg class="comic__wobble" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d={wobble}></path>
+      </svg>
+    </div>
+    <div class="comic__sheet comic__sheet--front">
+      <svg class="comic__wobble" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d={wobble}></path>
+      </svg>
+      <div class="comic__art" aria-hidden="true">
+        <img src={cover.src} alt="" width={cover.width} height={cover.height} />
+      </div>
+    </div>
+  </div>
+
+  <div class="comic__caption">
+    <svg class="comic__wobble" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d={wobbleCaption}></path>
+    </svg>
+    <span class="comic__title">{title}</span>
+    <p class="comic__blurb">{blurb}</p>
+  </div>
+</a>

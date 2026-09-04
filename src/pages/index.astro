@@ -1,0 +1,42 @@
+---
+import HomeLayout from '../layouts/HomeLayout.astro';
+import ComicPanel from '../components/ComicPanel.astro';
+import coverOne from '../assets/covers/one.svg';
+import coverTwo from '../assets/covers/two.svg';
+import coverThree from '../assets/covers/three.svg';
+import coverFour from '../assets/covers/four.svg';
+import coverFive from '../assets/covers/five.svg';
+---
+
+<HomeLayout>
+  <ComicPanel
+    href="/one"
+    title="Project One"
+    blurb="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    cover={coverOne}
+  />
+  <ComicPanel
+    href="/two"
+    title="Project Two"
+    blurb="Sed ut perspiciatis unde omnis iste natus error."
+    cover={coverTwo}
+  />
+  <ComicPanel
+    href="/three"
+    title="Project Three"
+    blurb="At vero eos et accusamus et iusto odio dignissimos."
+    cover={coverThree}
+  />
+  <ComicPanel
+    href="/four"
+    title="Project Four"
+    blurb="Nam libero tempore, cum soluta nobis est eligendi."
+    cover={coverFour}
+  />
+  <ComicPanel
+    href="/five"
+    title="Project Five"
+    blurb="Quis autem vel eum iure reprehenderit qui in ea."
+    cover={coverFive}
+  />
+</HomeLayout>
