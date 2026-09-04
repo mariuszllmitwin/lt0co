@@ -175,7 +175,7 @@ a {
 .comic:hover .comic__sheet--front,
 .comic:focus-visible .comic__sheet--front {
   transform: rotate(calc(var(--comic-skew) * 0.4)) translateY(-2px);
-  box-shadow: 4px 5px 0 rgba(107, 154, 212, 0.22);
+  box-shadow: 5px 7px 16px rgba(61, 90, 128, 0.18);
 }
 
 .comic__art {
@@ -202,7 +202,7 @@ a {
   padding: 0.7rem 1rem 0.75rem;
   background: var(--paper);
   border: 2px solid var(--ink);
-  box-shadow: 3px 4px 0 rgba(107, 154, 212, 0.18);
+  box-shadow: 4px 5px 12px rgba(61, 90, 128, 0.14);
   transform: rotate(calc(var(--comic-skew) * -1.4 + 0.8deg));
   transition: transform 0.25s ease;
 }
