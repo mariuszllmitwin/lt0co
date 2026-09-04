@@ -139,10 +139,10 @@ a {
   position: absolute;
   inset: 0;
   background: var(--paper);
-  border: 2px solid var(--ink);
-  border-radius: 2px;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  border-radius: 1px;
   pointer-events: none;
-  box-shadow: 0 1px 0 rgba(61, 90, 128, 0.06), 1px 2px 8px rgba(61, 90, 128, 0.08);
+  box-shadow: 2px 2px 0 rgba(107, 154, 212, 0.12);
 }
 
 /* Imperfect edges via jagged clip — subtle */
@@ -174,8 +174,8 @@ a {
 
 .comic:hover .comic__sheet--front,
 .comic:focus-visible .comic__sheet--front {
-  transform: rotate(calc(var(--comic-skew) * 0.4)) translateY(-2px);
-  box-shadow: 4px 6px 0 rgba(107, 154, 212, 0.12);
+  transform: rotate(calc(var(--comic-skew) * 0.4)) translateY(-1px);
+  box-shadow: 3px 3px 0 rgba(107, 154, 212, 0.16);
 }
 
 .comic__art {
@@ -201,8 +201,8 @@ a {
   max-width: 72%;
   padding: 0.7rem 1rem 0.75rem;
   background: var(--paper);
-  border: 2px solid var(--ink);
-  box-shadow: 0 1px 0 rgba(61, 90, 128, 0.06), 1px 2px 8px rgba(61, 90, 128, 0.08);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  box-shadow: 2px 2px 0 rgba(107, 154, 212, 0.12);
   transform: rotate(calc(var(--comic-skew) * -1.4 + 0.8deg));
   transition: transform 0.25s ease;
 }
@@ -256,7 +256,7 @@ a {
 .comic__sheet--back-2,
 .comic__sheet--back-3,
 .comic__caption {
-  border-color: color-mix(in srgb, var(--ink) 22%, transparent);
+  border-color: color-mix(in srgb, var(--ink) 35%, transparent);
 }
 
 .comic__caption .comic__wobble path {
